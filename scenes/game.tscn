@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cc5gj7bixh0cg"]
+[gd_scene load_steps=14 format=3 uid="uid://cc5gj7bixh0cg"]
 
 [ext_resource type="PackedScene" uid="uid://by4knji13fkta" path="res://platform.tscn" id="1_6wwdw"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ata7j"]
 [ext_resource type="PackedScene" uid="uid://y2xpus453vx4" path="res://scenes/player.tscn" id="1_vr7xo"]
 [ext_resource type="Texture2D" uid="uid://dkf7hbwtr8563" path="res://assets/sprites/world_tileset.png" id="2_jcs3j"]
 [ext_resource type="PackedScene" uid="uid://c8k5ebt5tcojf" path="res://scenes/coin.tscn" id="4_w00o0"]
@@ -453,6 +454,19 @@ sources/0 = SubResource("TileSetAtlasSource_oucdp")
 [node name="Game" type="Node2D"]
 position = Vector2(1, 11)
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_ata7j")
+
+[node name="Label2" type="Label" parent="GameManager"]
+offset_left = -104.0
+offset_top = -82.0
+offset_right = 13.0
+offset_bottom = -59.0
+text = "Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Platform" parent="." instance=ExtResource("1_6wwdw")]
 z_index = 1
 position = Vector2(258, -171)
@@ -511,3 +525,12 @@ shape = SubResource("WorldBoundaryShape2D_tea85")
 
 [node name="Slime" parent="." instance=ExtResource("6_gkqb7")]
 position = Vector2(465, -191)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 362.0
+offset_top = -88.0
+offset_right = 479.0
+offset_bottom = -65.0
+text = "Almost There..."
+horizontal_alignment = 1
+vertical_alignment = 1
